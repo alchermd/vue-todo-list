@@ -16,7 +16,7 @@ const app = new Vue({
           status: 0
         });
 
-        this.newTask = '';
+        this.newTask = "";
       }
     }
   },
@@ -28,6 +28,10 @@ const app = new Vue({
 
     doings() {
       return this.tasks.filter(task => task.status === 1);
+    },
+
+    finished() {
+      return this.tasks.filter(task => task.status === 2);
     }
   }
 });
