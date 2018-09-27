@@ -1,6 +1,29 @@
 const app = new Vue({
   el: "#app",
+
   data: {
-    message: "Hello, World!"
+    newTask: "",
+    tasks: []
+  },
+
+  methods: {
+    addTask(event) {
+      event.preventDefault();
+
+      if (this.newTask) {
+        this.tasks.push({
+          description: this.newTask,
+          status: 0
+        });
+
+        this.newTask = '';
+      }
+    }
+  },
+
+  computed: {
+    todos() {
+      return this.tasks.filter(task => task.status === 0);
+    }
   }
 });
