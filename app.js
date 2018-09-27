@@ -24,6 +24,10 @@ const app = new Vue({
   computed: {
     todos() {
       return this.tasks.filter(task => task.status === 0);
+    },
+
+    doings() {
+      return this.tasks.filter(task => task.status === 1);
     }
   }
 });
