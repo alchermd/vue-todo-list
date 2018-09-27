@@ -29,18 +29,22 @@
                     </form>
 
                     <div class="row">
-                        <div class="col">
-                            <h2 class="text-center">Todo</h2>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item card-text text-center" v-for="task in todos">
+                        <div class="col text-center">
+                            <h2>Todo</h2>
+
+                            <ul v-if="todos.length > 0" class="list-group list-group-flush">
+                                <li class="list-group-item card-text" v-for="task in todos">
                                     {{ task.description }} <a class="text-primary" @click="task.status = 1">&raquo;</a>
                                 </li>
                             </ul>
+
+                            <p v-else>No tasks in this column.</p>
                         </div>
-                        <div class="col">
-                            <h2 class="text-center">Doing</h2>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item card-text text-center" v-for="task in doings">
+                        <div class="col text-center">
+                            <h2>Doing</h2>
+
+                            <ul v-if="doings.length > 0" class="list-group list-group-flush">
+                                <li class="list-group-item card-text" v-for="task in doings">
                                     <a class="text-primary" @click="task.status = 0">&laquo;</a>
 
                                     {{ task.description }}
@@ -48,17 +52,21 @@
                                     <a class="text-primary" @click="task.status = 2">&raquo;</a>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="col">
-                            <h2 class="text-center">Finished</h2>
 
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item card-text text-center" v-for="task in finished">
+                            <p v-else>No tasks in this column.</p>
+                        </div>
+                        <div class="col text-center">
+                            <h2>Finished</h2>
+
+                            <ul v-if="finished.length > 0" class="list-group list-group-flush">
+                                <li class="list-group-item card-text" v-for="task in finished">
                                     <a class="text-primary" @click="task.status = 1">&laquo;</a>
 
                                     {{ task.description }}
                                 </li>
                             </ul>
+
+                            <p v-else>No tasks in this column.</p>
                         </div>
                     </div>
                 </div>
