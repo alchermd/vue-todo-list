@@ -2,6 +2,10 @@
 
 A VueJS implementation of the classic todo list application
 
+## Preview
+
+![](./img/preview.png)
+
 ## Installation
 
 This app doesn't require any dependencies, so you can just open `index.html` in your favourite browser. If you want, you can use PHP's builtin server:
